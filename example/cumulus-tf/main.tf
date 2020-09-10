@@ -53,7 +53,7 @@ module "cumulus" {
   bucket_map_key = var.bucket_map_key
 
   vpc_id            = var.vpc_id
-  lambda_subnet_ids = var.subnet_ids
+  lambda_subnet_ids = var.lambda_subnet_ids
 
   ecs_cluster_instance_image_id   = "ami-a7a242da"
   ecs_cluster_instance_subnet_ids = var.subnet_ids

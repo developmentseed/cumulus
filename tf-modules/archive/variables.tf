@@ -46,6 +46,7 @@ variable "dynamo_tables" {
 
 variable "ecs_cluster_name" {
   type = string
+  default = ""
 }
 
 variable "elasticsearch_domain_arn" {

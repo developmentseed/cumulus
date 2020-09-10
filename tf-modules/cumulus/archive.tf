@@ -11,7 +11,7 @@ module "archive" {
 
   lambda_processing_role_arn = aws_iam_role.lambda_processing.arn
 
-  ecs_cluster_name = aws_ecs_cluster.default.name
+  # ecs_cluster_name = aws_ecs_cluster.default.name
 
   elasticsearch_domain_arn        = var.elasticsearch_domain_arn
   elasticsearch_hostname          = var.elasticsearch_hostname

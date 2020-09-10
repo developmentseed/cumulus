@@ -93,6 +93,11 @@ variable "saml_launchpad_metadata_url" {
   default = "N/A"
 }
 
+variable "lambda_subnet_ids" {
+  type = list(string)
+  default = []
+}
+
 variable "subnet_ids" {
   type = list(string)
   default = []

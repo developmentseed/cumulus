@@ -6,7 +6,7 @@ terraform {
 
 locals {
   lambda_security_group_ids = compact([
-    aws_security_group.no_ingress_all_egress[0].id,
+    length(var.lambda_subnet_ids) == 0 ? null : aws_security_group.no_ingress_all_egress[0].id,
     var.elasticsearch_security_group_id
   ])
 }

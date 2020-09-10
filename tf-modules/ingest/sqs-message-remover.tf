@@ -10,9 +10,9 @@ module "sqs_message_remover_lambda" {
   lambda_subnet_ids = var.lambda_subnet_ids
   # TODO: Create a local variable for security groups to use
   # throughout the ingest modiule
-  security_group_ids = [
-    aws_security_group.no_ingress_all_egress[0].id
-  ]
+  # security_group_ids = [
+  #   aws_security_group.no_ingress_all_egress[0].id
+  # ]
 
   tags = var.tags
 

@@ -131,6 +131,8 @@ module "cumulus" {
   log_destination_arn           = var.log_destination_arn
   additional_log_groups_to_elk  = var.additional_log_groups_to_elk
 
+  deploy_distribution_s3_credentials_endpoint = false
+
   tags = local.tags
 }
 

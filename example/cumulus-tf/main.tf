@@ -33,13 +33,13 @@ data "terraform_remote_state" "data_persistence" {
   workspace = terraform.workspace
 }
 
-data "aws_lambda_function" "sts_credentials" {
-  function_name = "gsfc-ngap-sh-s3-sts-get-keys"
-}
+# data "aws_lambda_function" "sts_credentials" {
+#   function_name = "gsfc-ngap-sh-s3-sts-get-keys"
+# }
 
-data "aws_ssm_parameter" "ecs_image_id" {
-  name = "image_id_ecs_amz2"
-}
+# data "aws_ssm_parameter" "ecs_image_id" {
+#   name = "image_id_ecs_amz2"
+# }
 
 module "cumulus" {
   source = "../../tf-modules/cumulus"
@@ -48,14 +48,14 @@ module "cumulus" {
 
   prefix = var.prefix
 
-  deploy_to_ngap = true
+  deploy_to_ngap = false
 
   bucket_map_key = var.bucket_map_key
 
   vpc_id            = var.vpc_id
   lambda_subnet_ids = var.subnet_ids
 
-  ecs_cluster_instance_image_id   = data.aws_ssm_parameter.ecs_image_id.value
+  ecs_cluster_instance_image_id   = "ami-a7a242da"
   ecs_cluster_instance_subnet_ids = var.subnet_ids
   ecs_cluster_min_size            = 2
   ecs_cluster_desired_size        = 2
@@ -134,7 +134,7 @@ module "cumulus" {
   distribution_url = var.distribution_url
   thin_egress_jwt_secret_name = var.thin_egress_jwt_secret_name
 
-  sts_credentials_lambda_function_arn = data.aws_lambda_function.sts_credentials.arn
+  # sts_credentials_lambda_function_arn = data.aws_lambda_function.sts_credentials.arn
 
   archive_api_port              = var.archive_api_port
   private_archive_api_gateway   = var.private_archive_api_gateway

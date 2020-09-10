@@ -4,6 +4,7 @@ variable "prefix" {
 
 variable "subnet_ids" {
   type = list(string)
+  default = []
 }
 
 variable "aws_region" {
@@ -60,6 +61,7 @@ module "data_persistence" {
   enable_point_in_time_tables = var.enable_point_in_time_tables
 
   elasticsearch_config = var.elasticsearch_config
+  include_elasticsearch = false
 
   tags = merge(var.tags, { Deployment = var.prefix })
 }

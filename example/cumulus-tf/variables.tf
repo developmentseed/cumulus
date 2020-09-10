@@ -95,6 +95,7 @@ variable "saml_launchpad_metadata_url" {
 
 variable "subnet_ids" {
   type = list(string)
+  default = []
 }
 
 variable "system_bucket" {
@@ -115,6 +116,7 @@ variable "urs_client_password" {
 
 variable "vpc_id" {
   type = string
+  default = null
 }
 
 # Optional

@@ -116,19 +116,7 @@ module "cumulus" {
   token_secret = var.token_secret
 
   archive_api_users = [
-    "chuckwondo",
-    "jennyhliu",
-    "jmcampbell",
-    "kbaynes",
-    "kkelly",
-    "kovarik",
-    "lfrederick",
-    "matthewsavoie",
-    "mboyd",
-    "menno.vandiermen",
-    "mhuffnagle2",
-    "brian.tennity",
-    "jasmine"
+    "mboyd"
   ]
 
   distribution_url = var.distribution_url

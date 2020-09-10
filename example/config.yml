@@ -2,6 +2,9 @@ default:
   bucket: cumulus-test-sandbox-internal
   apiUsername: jasmine
 
+jt-cumulus:
+  bucket: jt-cumulus-internal
+
 cumulus-sit:
   bucket: cumulus-sit-internal
   apiUsername: jasmine
